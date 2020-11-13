@@ -7,7 +7,7 @@ Future<Null> normalDialog(BuildContext context, String string) async {
       title: Text(string),
       children: [
         TextButton(
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.pop(context),//
           child: Text('OK'),
         )
       ],
