@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nat/Register.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -15,7 +16,7 @@ class _HomeState extends State<Home> {
           gradient: RadialGradient(
             center: Alignment(0, -0.65),
             radius: 1.0,
-            colors: [Colors.white, Colors.blue],
+            colors: [Colors.white, Colors.lightBlue],
           ),
         ),
         child: Center(
@@ -27,14 +28,22 @@ class _HomeState extends State<Home> {
               buildTextFielduser(),
               buildTextFieldpassword(),
               buildLogin(),
-              TextButton(
-                onPressed: () {},
-                child: Text('New Register'),
-              )
+              buildTextButton()
             ],
           ),
         ),
       ),
+    );
+  }
+
+  TextButton buildTextButton() {
+    return TextButton(
+      onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Register(),
+          )),
+      child: Text('New Register'),
     );
   }
 
@@ -60,6 +69,7 @@ class _HomeState extends State<Home> {
           ),
         ),
       );
+      
 
   Container buildTextFieldpassword() => Container(
         margin: EdgeInsets.only(top: 20),
